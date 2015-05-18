@@ -41,6 +41,9 @@ public class MainActivity extends ActionBarActivity {
 
     protected void onRestoreInstanceState(Bundle savedInstanceState) {
         super.onRestoreInstanceState(savedInstanceState);
+
+        cnt = savedInstanceState.getInt("count") ;
+
         Log.d(LOG_TAG, "onRestoreInstanceState");
     }
 
@@ -51,6 +54,9 @@ public class MainActivity extends ActionBarActivity {
 
     protected void onSaveInstanceState(Bundle outState) {
         super.onSaveInstanceState(outState);
+
+        outState.putInt("count", cnt);
+
         Log.d(LOG_TAG, "onSaveInstanceState");
     }
 
